@@ -1,0 +1,26 @@
+//Base
+.btn {
+  @include button(16px, 32px, $tx-reg);
+  text-decoration: none;
+  &:hover {
+    background-color: $bg-grey;
+  }
+}
+
+//width 100%
+.btn-lg {
+  @include button-block;
+}
+
+.btn-lg-half {
+  width: 50%;
+}
+
+//outlines
+.btn__outline--orange {
+  @include button-outline-variant($bg-orange);
+}
+.btn__outline--grey {
+  @include button-outline-variant($bg-grey);
+  color: $txt-grey;
+}

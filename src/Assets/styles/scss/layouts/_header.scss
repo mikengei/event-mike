@@ -1,0 +1,17 @@
+//@file contains nav and header
+.topNav {
+  padding: 2rem 0 0 0;
+}
+
+.searchArea {
+  padding: 1rem;
+  background-color: $bg-grey;
+  form {
+    width: 50%;
+
+    @media screen and (max-width: $small-phone) {
+      width: 100%;
+    }
+  }
+}
+

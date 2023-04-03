@@ -1,0 +1,292 @@
+body {
+  margin: 0;
+  background-color: $bg-grey;
+  font-family: 'Almaria', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.row::after {
+  content: '';
+  clear: both;
+  display: table;
+}
+
+[class*='col-'] {
+  float: left;
+  padding: 15px;
+}
+
+.col-1 {
+  width: 8.33%;
+}
+.col-2 {
+  width: 16.66%;
+}
+.col-3 {
+  width: 25%;
+}
+.col-4 {
+  width: 33.33%;
+}
+.col-5 {
+  width: 41.66%;
+}
+.col-6 {
+  width: 50%;
+}
+.col-7 {
+  width: 58.33%;
+}
+.col-8 {
+  width: 66.66%;
+}
+.col-9 {
+  width: 75%;
+}
+.col-10 {
+  width: 83.33%;
+}
+.col-11 {
+  width: 91.66%;
+}
+.col-12 {
+  width: 100%;
+}
+
+// Variables
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+);
+
+// Container styles
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+
+  // Breakpoint specific styles
+  @each $breakpoint, $container-max-width in $container-max-widths {
+    @media (min-width: $container-max-width) {
+      max-width: $container-max-width;
+    }
+  }
+}
+
+// Container-fluid styles
+.container-fluid {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.card__title--desc {
+  padding: 1rem 0 2rem 0;
+}
+.btn-disabled {
+  pointer-events: none;
+}
+.logo {
+  padding-bottom: 1rem;
+}
+
+.txt-orange {
+  color: $txt-orange;
+}
+
+.txt-center {
+  text-align: center;
+}
+
+.fl-right {
+  float: right;
+}
+
+.fl-left {
+  float: left;
+}
+
+.white-bg-container {
+  background-color: $white-bg;
+  padding: 10px;
+  height: 200vh;
+}
+
+//Form
+input[type='text'],
+input[type='email'],
+select,
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+input[type='submit'] {
+  background-color: $bg-orange;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+input[type='submit']:hover {
+  background-color: $bg-orange-dark;
+}
+
+.fullName,
+.email,
+.password,
+.mobile {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.email,
+.password,
+.mobile,
+.fullName {
+  width: 100%;
+}
+
+.wrapper {
+  //height: 97vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form_wrapper {
+  margin-top: 5%;
+  display: flex;
+  flex-direction: column;
+  width: 40em;
+  max-width: 80%;
+  min-width: 100px;
+  min-height: 400px;
+  padding: 20px 40px;
+  border-radius: 6px;
+  //box-shadow: 0px 8px 36px #222;
+  background-color: #fff;
+}
+
+.form_wrapper > h2 {
+  display: flex;
+  justify-content: center;
+  font-family: 'Segoe UI', 'Ubuntu', 'Roboto', 'Open Sans', 'Helvetica Neue',
+    sans-serif;
+  font-size: 2em;
+  font-weight: lighter;
+  margin-top: 0.25em;
+  color: #222;
+}
+
+form {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.form_wrapper--desc {
+  text-align: center;
+  span {
+    color: $txt-orange;
+  }
+}
+
+.line {
+  height: 1px;
+  background-color: #d5d5d5;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+.attendance_num {
+  flex-direction: row !important;
+
+  label {
+    width: 30%;
+  }
+}
+
+.addAttendee_btn {
+  width: 100%;
+
+  .addAttendee_btn--btn {
+    border: none;
+    background-color: #fff;
+    font-size: 1rem;
+    color: $txt-orange;
+    cursor: pointer;
+    float: right;
+  }
+}
+
+.action-btn {
+  width: 100%;
+  display: flex;
+
+  input,
+  button {
+    width: 50%;
+  }
+}
+
+.card-align-center {
+  margin-top: 40%;
+}
+
+.search {
+  width: 100%;
+  position: relative;
+}
+
+.ico-open::before {
+  content: '';
+  height: 15px;
+  width: 20px;
+  background-size: contain;
+  background-image: url(https://alvimurtaza.github.io/Interview-Front-end/images/l3-l4-engineer/book.png);
+  display: inline-block;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.ico-closed::before {
+  content: '';
+  height: 15px;
+  width: 20px;
+  background-size: contain;
+  background-image: url(https://alvimurtaza.github.io/Interview-Front-end/images/l3-l4-engineer/sold-out.png);
+  display: inline-block;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.ico-search {
+  height: 15px;
+  width: 20px;
+  background-size: contain;
+  background-image: url(https://alvimurtaza.github.io/Interview-Front-end/images/l3-l4-engineer/search.png);
+  display: inline-block;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: absolute;
+  right: 4%;
+  top: 30%;
+}

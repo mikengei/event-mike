@@ -1,0 +1,27 @@
+//base
+@mixin button($pad1, $pad2, $text-size) {
+  padding: $pad1 $pad2;
+  text-align: center;
+  display: inline-block;
+  transition-duration: 0.4s;
+  font-size: $text-size;
+  margin: 4px 2px;
+  border-radius: 6px;
+}
+
+@mixin button-block {
+  width:100%;
+}
+
+//Outline variant of my buttons
+@mixin button-outline-variant($color) {
+  background-color: transparent;
+  color: $color;
+  border: 2px solid $color;
+
+  &:hover {
+    background-color: $color;
+    color:#fff;
+    border: 1px solid $color;
+  }  
+}
