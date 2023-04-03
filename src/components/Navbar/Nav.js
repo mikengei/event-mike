@@ -4,7 +4,7 @@ export function Nav() {
   return (
     <div className="wrapper">
       <div className="nav topNav container-fluid" id="myTopnav">
-        <div className="container">
+        <div className="container nav__container">
           <div class="nav__brand">
             <img
               src="https://alvimurtaza.github.io/Interview-Front-end/images/l3-l4-engineer/logo.png"
@@ -12,18 +12,21 @@ export function Nav() {
               className="logo"
             />
           </div>
-          <a href="#home" className="nav-item">
-            Logout
-          </a>
-          <a href="#help" className="nav-item">
-            Help
-          </a>
-          <a href="" className="nav-item active">
-            Events
-          </a>
-          <a href="#dashboard" className="nav-item">
-            Dashboard
-          </a>
+
+          <div class="nav__list">
+              <a href="#home" className="nav-item">
+                Logout
+              </a>
+              <a href="#help" className="nav-item">
+                Help
+              </a>
+              <a href="" className="nav-item active">
+                Events
+              </a>
+              <a href="#dashboard" className="nav-item">
+                Dashboard
+              </a>
+          </div>
         </div>
       </div>
 

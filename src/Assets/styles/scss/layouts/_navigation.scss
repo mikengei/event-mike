@@ -3,6 +3,18 @@
   overflow: hidden;
   background-color: $nav-grey;
 
+  &__container {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__brand {
+    img {
+      width: 100%;
+      @media screen and (max-width: $small-phone) {
+        width: 60%;
+      }
+    }
+  }
   .nav-item {
     float: right;
     display: block;
@@ -24,8 +36,5 @@
     @media screen and (max-width: $small-phone) {
       display: none;
     }
-  }
-  &__brand{
-    
   }
 }
