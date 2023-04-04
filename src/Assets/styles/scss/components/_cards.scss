@@ -7,6 +7,7 @@
   overflow: hidden;
   background-color: #fff;
   box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.05);
+
   .card-header {
     height: 10rem;
     img {
@@ -28,6 +29,11 @@
       margin-bottom: 1rem;
     }
   }
+
+  .card-title {
+    white-space: nowrap;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 }
-
-

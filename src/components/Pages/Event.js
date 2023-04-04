@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { Cardlist } from '../../Data/card-data';
+import { Cardlist } from '../../Data/card_data.json';
 
 export function Event() {
   let imageUrl,

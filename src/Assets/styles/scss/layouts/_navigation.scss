@@ -6,12 +6,16 @@
   &__container {
     display: flex;
     justify-content: space-between;
+    @media screen and (max-width: $small-phone) {
+      display: inline;
+    }
   }
   &__brand {
     img {
       width: 100%;
       @media screen and (max-width: $small-phone) {
         width: 60%;
+        padding-left: 1rem;
       }
     }
   }
@@ -36,5 +40,22 @@
     @media screen and (max-width: $small-phone) {
       display: none;
     }
+  }
+}
+
+.hamburger {
+  background-image: urL('https://alvimurtaza.github.io/Interview-Front-end/images/l3-l4-engineer/hamburger.png');
+  width: 32px;
+  height: 32px;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: none;
+
+  @media screen and (max-width: $small-phone) {
+    display: block;
+    text-align: left;
+    position: absolute;
+    top: 3.5%;
+    left: 90%;
   }
 }

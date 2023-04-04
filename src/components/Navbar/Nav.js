@@ -26,6 +26,9 @@ export function Nav() {
               <a href="#dashboard" className="nav-item">
                 Dashboard
               </a>
+              <a href="javascript:void(0);" class="hamburger" onclick="navToggle()">
+                  <i class="menu-bars"></i>
+              </a>
           </div>
         </div>
       </div>

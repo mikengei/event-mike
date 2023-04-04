@@ -30,6 +30,9 @@ body {
 }
 .col-4 {
   width: 33.33%;
+  @media screen and (max-width: $large-phone) {
+    width: 100%;
+  }
 }
 .col-5 {
   width: 41.66%;

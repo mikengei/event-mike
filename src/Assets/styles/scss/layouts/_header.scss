@@ -1,6 +1,10 @@
 //@file contains nav and header
 .topNav {
   padding: 2rem 0 0 0;
+
+  @media screen and (max-width: $small-phone) {
+    padding: 0;
+  }
 }
 
 .searchArea {
