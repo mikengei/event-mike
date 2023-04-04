@@ -20,6 +20,7 @@ export function Card({ title, imageUrl, date, tickets_avail, id }) {
   }
 
   return (
+    
     <div className="col-4">
       <div className="card">
         <div className="card-header">

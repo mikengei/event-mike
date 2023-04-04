@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 export function Nav() {
   return (
@@ -14,39 +14,28 @@ export function Nav() {
           </div>
 
           <div class="nav__list">
-              <a href="#home" className="nav-item">
-                Logout
-              </a>
-              <a href="#help" className="nav-item">
-                Help
-              </a>
-              <a href="" className="nav-item active">
-                Events
-              </a>
-              <a href="#dashboard" className="nav-item">
-                Dashboard
-              </a>
-              <a href="javascript:void(0);" class="hamburger" onclick="navToggle()">
-                  <i class="menu-bars"></i>
-              </a>
+            <a href="#out" className="nav-item">
+              Logout
+            </a>
+            <a href="#help" className="nav-item">
+              Help
+            </a>
+            <a href="" className="nav-item active">
+              Events
+            </a>
+            <a href="#dashboard" className="nav-item">
+              Dashboard
+            </a>
+            <a
+              href="javascript:void(0);"
+              class="hamburger"
+              onclick="navToggle()"
+            >
+              <i class="menu-bars"></i>
+            </a>
           </div>
         </div>
       </div>
-
-      <div className="searchArea container">
-        <form>
-          <div className="search">
-            <i className="ico-search"></i>
-            <input
-              type="text"
-              name="search"
-              placeholder="Search By Event Title..."
-            />
-          </div>
-        </form>
-      </div>
-
-      <div className="container"></div>
     </div>
   );
 }
