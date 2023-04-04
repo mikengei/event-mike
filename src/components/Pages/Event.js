@@ -3,12 +3,7 @@ import { useParams } from 'react-router-dom';
 import { Cardlist } from '../../Data/card_data.json';
 
 export function Event() {
-  let imageUrl,
-    title,
-    date,
-    tickets_avail,
-    inputNum = 2,
-    count = 1;
+  let imageUrl, title, date, tickets_avail;
 
   const { id } = useParams();
   const ID = parseInt({ id }.id);
@@ -27,13 +22,9 @@ export function Event() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    //get values
-    let user0_name = event.target.userdefault.value;
     //hide/show cards
     setVisible(!visible);
     setVisibleCard(visible);
-     
-      console.log(inputs.length);
   };
 
   const AddInput = () => {
@@ -61,10 +52,13 @@ export function Event() {
               <input
                 type="text"
                 name="fullName"
+                title=""
                 id="userdefault"
+                pattern="[a-zA-Z ]*"
                 required="true"
                 placeholder="FirstName LastName"
               />
+              <span className="form__error">* Please enter your name</span>
             </div>
             <div className="email">
               <label htmlFor="email">Email</label>
@@ -72,9 +66,11 @@ export function Event() {
                 type="email"
                 name="email"
                 id="email"
+                pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
                 required="true"
                 placeholder="username@domain.com"
               />
+              <span className="form__error">* Please enter your email</span>
             </div>
             <div className="mobile">
               <label htmlFor="Mobile">Mobile</label>
@@ -82,9 +78,13 @@ export function Event() {
                 type="text"
                 name="mobile"
                 id="mobile"
+                pattern="[0-9+]+"
                 required="true"
                 placeholder="+9XXX XXX XXXX"
               />
+              <span className="form__error">
+                * Please enter your mobile number
+              </span>
             </div>
 
             <div className="info">
@@ -96,7 +96,6 @@ export function Event() {
                 <label htmlFor="fullName ">{index + 1}</label>
                 <input
                   type="text"
-                  key={index}
                   id={`user${index + 1}`}
                   name="fullName"
                   placeholder="FirstName LastName"
@@ -118,7 +117,9 @@ export function Event() {
                 name="Book Tickets"
                 className="btn btn-solid-orange"
               />
-              <button className="btn btn__outline--orange">Cancel</button>
+              <a href="/" className="btn btn-lg-half btn__outline--orange">
+                Cancel
+              </a>
             </div>
           </form>
         </div>
@@ -151,7 +152,12 @@ function Confirm(props) {
                 className="btn btn-lg-half btn-solid-orange"
                 name="Make Payment"
               />
-              <a className="btn btn-lg btn__outline--orange">Back To Booking</a>
+              <a
+                href="/"
+                className="btn btn-lg-half btn-lg btn__outline--orange"
+              >
+                Back To Booking
+              </a>
             </div>
           </div>
         </div>

@@ -14,16 +14,16 @@ export function Nav() {
           </div>
 
           <div class="nav__list">
-            <a href="#out" className="nav-item">
+            <a href="#" className="nav-item">
               Logout
             </a>
-            <a href="#help" className="nav-item">
+            <a href="#" className="nav-item">
               Help
             </a>
             <a href="" className="nav-item active">
               Events
             </a>
-            <a href="#dashboard" className="nav-item">
+            <a href="#" className="nav-item">
               Dashboard
             </a>
             <a

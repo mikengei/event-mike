@@ -22,7 +22,7 @@ form {
 .form_wrapper > h2 {
   display: flex;
   justify-content: center;
-  font-family: $almarai-font;
+  font-family: 'Almaria', sans-serif;
   font-size: 2em;
   font-weight: lighter;
   margin-top: 0.25em;
@@ -64,4 +64,15 @@ input[type='submit']:hover {
 
 input:focus-visible {
   outline: 3px solid $bg-orange;
+}
+
+//error
+
+.form__error {
+  color: $bg-orange;
+  display: none;
+}
+
+input:invalid ~ .form__error {
+  display: block;
 }

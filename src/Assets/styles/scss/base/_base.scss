@@ -4,101 +4,12 @@ body {
   font-family: 'Almaria', sans-serif;
 }
 
-* {
-  box-sizing: border-box;
-}
-
-.row::after {
-  content: '';
-  clear: both;
-  display: table;
-}
-
-[class*='col-'] {
-  float: left;
-  padding: 15px;
-}
-
-.col-1 {
-  width: 8.33%;
-}
-.col-2 {
-  width: 16.66%;
-}
-.col-3 {
-  width: 25%;
-}
-.col-4 {
-  width: 33.33%;
-  @media screen and (max-width: $large-phone) {
-    width: 100%;
-  }
-}
-.col-5 {
-  width: 41.66%;
-}
-.col-6 {
-  width: 50%;
-}
-.col-7 {
-  width: 58.33%;
-}
-.col-8 {
-  width: 66.66%;
-}
-.col-9 {
-  width: 75%;
-}
-.col-10 {
-  width: 83.33%;
-}
-.col-11 {
-  width: 91.66%;
-}
-.col-12 {
-  width: 100%;
-}
-
-// Variables
-$container-max-widths: (
-  sm: 540px,
-  md: 720px,
-  lg: 960px,
-  xl: 1140px,
-);
-
-// Container styles
-.container {
-  width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
-
-  // Breakpoint specific styles
-  @each $breakpoint, $container-max-width in $container-max-widths {
-    @media (min-width: $container-max-width) {
-      max-width: $container-max-width;
-    }
-  }
-}
-
-// Container-fluid styles
-.container-fluid {
-  width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
-}
-
 .card__title--desc {
   padding: 1rem 0 2rem 0;
 }
 .btn-disabled {
   pointer-events: none;
 }
-
 
 .txt-orange {
   color: $txt-orange;
@@ -121,7 +32,6 @@ $container-max-widths: (
   padding: 10px;
   height: 200vh;
 }
-
 
 .fullName,
 .email,
@@ -147,7 +57,6 @@ $container-max-widths: (
   justify-content: center;
   align-items: center;
 }
-
 
 .line {
   height: 1px;

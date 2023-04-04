@@ -9,16 +9,12 @@ import { Cardlist } from '../../Data/card_data.json';
 export function Events() {
   const [searchInput, setInput] = useState('');
 
-  //@var sets searchInput
-  const search = (event) => {
-    setInput(event.target.value);
-  };
-
   /*@var events_data
    * Returns cards
+   * Naive method
    */
   const events_data = Cardlist.filter((event) =>
-    event.title.toLowerCase().includes(searchInput)
+    event.title.toLowerCase().includes(searchInput.toLowerCase())
   ).map((event) => (
     //ToDo clean up this
     <Card
@@ -41,7 +37,7 @@ export function Events() {
               type="text"
               name="search"
               placeholder="Search By Event Title..."
-              onChange={search}
+              onChange={(e) => setInput(e.target.value)}
             />
           </div>
         </form>
@@ -51,7 +47,8 @@ export function Events() {
           <h2>
             Events <span className="faded-h1">({events_data.length})</span>
           </h2>
-          {events_data}
+
+          {events_data.length ? events_data : 'No results found!'}
         </div>
       </div>
     </>
