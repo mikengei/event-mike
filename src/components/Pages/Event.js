@@ -1,3 +1,7 @@
+/*
+ * Handles event form
+ * ToDo : clean up components code, reusable inputs
+ */
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Cardlist } from '../../Data/card_data.json';
@@ -17,20 +21,29 @@ export function Event() {
   }
   //Form handler stuff
   const [inputs, setInputs] = useState(['', '']);
+  const [extra_names, setExtraNames] = useState('');
   const [visible, setVisible] = useState(false);
   const [vis, setVisibleCard] = useState(true);
 
+  //A handler for form submit
   const handleSubmit = (event) => {
     event.preventDefault();
     //hide/show cards
     setVisible(!visible);
     setVisibleCard(visible);
+    //const values = extra_names.filter((field) => field.value !== '');
+    console.log(extra_names);
   };
 
+  //A handler for adding inputs
   const AddInput = () => {
     setInputs([...inputs, '']);
   };
 
+  const extraNames = (event) => {
+    let x = event.target.value;
+    setExtraNames([...extra_names, x]);
+  };
   //---
   return (
     <div className="wrapper">
@@ -52,7 +65,6 @@ export function Event() {
               <input
                 type="text"
                 name="fullName"
-                title=""
                 id="userdefault"
                 pattern="[a-zA-Z ]*"
                 required="true"
@@ -98,6 +110,7 @@ export function Event() {
                   type="text"
                   id={`user${index + 1}`}
                   name="fullName"
+                  onChange={extraNames}
                   placeholder="FirstName LastName"
                 />
               </div>
