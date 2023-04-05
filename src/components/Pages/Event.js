@@ -5,6 +5,7 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Cardlist } from '../../Data/card_data.json';
+import { Link } from 'react-router-dom';
 
 export function Event() {
   let imageUrl, title, date, tickets_avail, ticket_num;
@@ -112,6 +113,7 @@ export function Event() {
                 <input
                   type="text"
                   name={`user${index + 1}`}
+                  key={`key${index}`}
                   placeholder="FirstName LastName"
                   onChange={(event) => extraNames(event, index)}
                 />
@@ -132,9 +134,9 @@ export function Event() {
                 name="Book Tickets"
                 className="btn btn-solid-orange"
               />
-              <a href="/" className="btn btn-lg-half btn__outline--orange">
+              <Link to="/" className="btn btn-lg-half btn__outline--orange">
                 Cancel
-              </a>
+              </Link>
             </div>
           </form>
         </div>
@@ -167,12 +169,12 @@ function Confirm(props) {
                 className="btn btn-lg-half btn-solid-orange"
                 value="Make Payment"
               />
-              <a
-                href="/"
+              <Link
+                to="/"
                 className="btn btn-lg-half btn-lg btn__outline--orange"
               >
                 Back To Booking
-              </a>
+              </Link>
             </div>
           </div>
         </div>
