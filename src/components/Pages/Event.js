@@ -107,7 +107,7 @@ export function Event() {
             </div>
 
             {inputs.map((inputValue, index) => (
-              <div className="fullName attendance_num">
+              <div className="fullName attendance_num" key={index}>
                 <label htmlFor="fullName ">{index + 1}</label>
                 <input
                   type="text"
