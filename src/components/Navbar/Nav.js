@@ -10,6 +10,8 @@ export function Nav() {
             <img
               src="https://alvimurtaza.github.io/Interview-Front-end/images/l3-l4-engineer/logo.png"
               alt="logo"
+              width="300"
+              height="40"
               className="logo"
             />
           </div>
