@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 export function Card({ title, imageUrl, date, tickets_avail, id }) {
   let [buttonText, setButtonText] = useState('Book Event');
@@ -20,7 +21,6 @@ export function Card({ title, imageUrl, date, tickets_avail, id }) {
   }
 
   return (
-    
     <div className="col-4">
       <div className="card">
         <div className="card-header">
@@ -36,12 +36,12 @@ export function Card({ title, imageUrl, date, tickets_avail, id }) {
               <span className={txt_type}>{ticket_number}</span>
             </small>
           </div>
-          <a
+          <Link
             href={`/event/${id}`}
             className={` btn btn-lg ${btn_color} ${icon_slot}`}
           >
             {buttonText}
-          </a>
+          </Link>
         </div>
       </div>
     </div>
