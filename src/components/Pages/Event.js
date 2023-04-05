@@ -7,7 +7,7 @@ import { useParams } from 'react-router-dom';
 import { Cardlist } from '../../Data/card_data.json';
 
 export function Event() {
-  let imageUrl, title, date, tickets_avail;
+  let imageUrl, title, date, tickets_avail, ticket_num;
 
   const { id } = useParams();
   const ID = parseInt({ id }.id);
@@ -21,28 +21,31 @@ export function Event() {
   }
   //Form handler stuff
   const [inputs, setInputs] = useState(['', '']);
-  const [extra_names, setExtraNames] = useState('');
+  const [values, setValues] = useState([]);
   const [visible, setVisible] = useState(false);
   const [vis, setVisibleCard] = useState(true);
 
   //A handler for form submit
   const handleSubmit = (event) => {
     event.preventDefault();
+    ticket_num = values.length + 1;
     //hide/show cards
     setVisible(!visible);
     setVisibleCard(visible);
-    //const values = extra_names.filter((field) => field.value !== '');
-    console.log(extra_names);
+    //console.log(ticket_num);
   };
 
   //A handler for adding inputs
-  const AddInput = () => {
+  const AddInput = (event) => {
+    event.preventDefault();
     setInputs([...inputs, '']);
   };
 
-  const extraNames = (event) => {
-    let x = event.target.value;
-    setExtraNames([...extra_names, x]);
+  const extraNames = (event, index) => {
+    const { name, value } = event.target;
+    const newValues = [...values];
+    newValues[index] = value;
+    setValues(newValues);
   };
   //---
   return (
@@ -67,7 +70,7 @@ export function Event() {
                 name="fullName"
                 id="userdefault"
                 pattern="[a-zA-Z ]*"
-                required="true"
+                required={true}
                 placeholder="FirstName LastName"
               />
               <span className="form__error">* Please enter your name</span>
@@ -79,7 +82,7 @@ export function Event() {
                 name="email"
                 id="email"
                 pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
-                required="true"
+                required={true}
                 placeholder="username@domain.com"
               />
               <span className="form__error">* Please enter your email</span>
@@ -91,7 +94,7 @@ export function Event() {
                 name="mobile"
                 id="mobile"
                 pattern="[0-9+]+"
-                required="true"
+                required={true}
                 placeholder="+9XXX XXX XXXX"
               />
               <span className="form__error">
@@ -103,15 +106,14 @@ export function Event() {
               <label htmlFor="attendee">Attendees</label>
             </div>
 
-            {inputs.map((input, index) => (
+            {inputs.map((inputValue, index) => (
               <div className="fullName attendance_num">
                 <label htmlFor="fullName ">{index + 1}</label>
                 <input
                   type="text"
-                  id={`user${index + 1}`}
-                  name="fullName"
-                  onChange={extraNames}
+                  name={`user${index + 1}`}
                   placeholder="FirstName LastName"
+                  onChange={(event) => extraNames(event, index)}
                 />
               </div>
             ))}
@@ -137,7 +139,7 @@ export function Event() {
           </form>
         </div>
       )}
-      {visible && <Confirm title={title} date={date} tickets={5} />}
+      {visible && <Confirm title={title} date={date} tickets={ticket_num} />}
     </div>
   );
 }
@@ -163,7 +165,7 @@ function Confirm(props) {
               <input
                 type="submit"
                 className="btn btn-lg-half btn-solid-orange"
-                name="Make Payment"
+                value="Make Payment"
               />
               <a
                 href="/"
