@@ -4,7 +4,7 @@
  **/
 import React, { useState } from 'react';
 import { Card } from '../Cards/Card';
-import { Cardlist } from '../../Data/card_data.json';
+import { Cardlist } from '../../Data/card-data';
 
 export function Events() {
   const [searchInput, setInput] = useState('');

@@ -9,7 +9,7 @@
     },
     {
       "id": 98,
-      "imageUrl": "https://alvimurtaza.github.io/Interview-Front-end/images/l3-l4-engineer/event-2.png",
+      "imageUrl": "./event-2.png",
       "title": "RGD Design Thinkers",
       "date": "21 Sept, 2020",
       "tickets_avail": 11

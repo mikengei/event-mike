@@ -37,7 +37,7 @@ export function Card({ title, imageUrl, date, tickets_avail, id }) {
             </small>
           </div>
           <Link
-            href={`/event/${id}`}
+            to={`/event/${id}`}
             className={` btn btn-lg ${btn_color} ${icon_slot}`}
           >
             {buttonText}
